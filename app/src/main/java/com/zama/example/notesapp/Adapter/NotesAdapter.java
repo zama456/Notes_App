@@ -15,17 +15,25 @@ import com.zama.example.notesapp.Model.Notes;
 import com.zama.example.notesapp.R;
 import com.zama.example.notesapp.databinding.ActivityItemNotesBinding;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.notesViewHolder> {
 
     MainActivity mainActivity;
     List<Notes> notes;
+    List<Notes> allNotesitem;
 
 
     public NotesAdapter(MainActivity mainActivity, List<Notes> notes) {
         this.mainActivity = mainActivity;
         this.notes = notes;
+        allNotesitem = new ArrayList<>(notes);
+    }
+
+    public void searchNotes(List<Notes> filterredNotes){
+        this.notes = filterredNotes;
+        notifyDataSetChanged();
     }
 
     @NonNull

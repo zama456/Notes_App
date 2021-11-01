@@ -15,11 +15,16 @@ public class NotesViewModel extends AndroidViewModel {
     public NotesRepository repository;
     public LiveData<List<Notes>> getallNotes;
 
+    public LiveData<List<Notes>> HighToLow;
+    public LiveData<List<Notes>> LowToHigh;
+
     public NotesViewModel(Application application) {
         super(application);
 
         repository = new NotesRepository(application);
         getallNotes = repository.getallNotes;
+        HighToLow = repository.HighToLow;
+        LowToHigh = repository.LowToHigh;
     }
 
    public void insertNote(Notes notes) {

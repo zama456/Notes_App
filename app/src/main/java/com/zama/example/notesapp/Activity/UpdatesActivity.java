@@ -1,13 +1,21 @@
 package com.zama.example.notesapp.Activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.zama.example.notesapp.Model.Notes;
 import com.zama.example.notesapp.NotesViewModel;
 import com.zama.example.notesapp.R;
@@ -42,6 +50,15 @@ public class UpdatesActivity extends AppCompatActivity {
         binding.upSubtitle.setText(ssubtitle);
         binding.upnotes.setText(snotes);
 
+        if(spriority.equals("1")){
+            binding.greenpty.setImageResource(R.drawable.ic_baseline_done_24);
+        }else if(spriority.equals("2")){
+            binding.Yellowpty.setImageResource(R.drawable.ic_baseline_done_24);
+
+        }else if(spriority.equals("3")){
+            binding.redpty.setImageResource(R.drawable.ic_baseline_done_24);
+
+        }
 
         binding.greenpty.setOnClickListener(view -> {
             binding.greenpty.setImageResource(R.drawable.ic_baseline_done_24);
@@ -99,5 +116,40 @@ public class UpdatesActivity extends AppCompatActivity {
         Toast.makeText(this, "Notes Updated Successfully", Toast.LENGTH_SHORT).show();
         finish();
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.delete_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId()==R.id.ic_delete){
+
+            BottomSheetDialog sheetDialog =new BottomSheetDialog(UpdatesActivity.this,
+                    R.style.BottomSheetStyle);
+            View view = LayoutInflater.from(UpdatesActivity.this).inflate(R.layout.delete_bottom_sheet,
+                    (LinearLayout) findViewById(R.id.bottomSheet));
+
+            sheetDialog.setContentView(view);
+
+            TextView yes, no;
+
+            yes = view.findViewById(R.id.delete_yes);
+            no= view.findViewById(R.id.delete_no);
+
+            yes.setOnClickListener(view1 -> {
+                notesViewModel.deleteNote(iid);
+                finish();
+            });
+
+            no.setOnClickListener(view1 -> {
+                sheetDialog.dismiss();
+            });
+            sheetDialog.show();
+        }
+        return true;
     }
 }

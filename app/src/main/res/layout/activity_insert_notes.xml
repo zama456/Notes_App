@@ -65,9 +65,10 @@
                 android:id="@+id/greenpty"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
+                android:src="@drawable/ic_baseline_done_24"
                 android:layout_margin="5dp"
                 android:background="@drawable/green_shape"
-                android:src="@drawable/ic_baseline_done_24" />
+                 />
 
             <ImageView
                 android:id="@+id/Yellowpty"
