@@ -1,3 +1,2 @@
 # Notes_App
-![Uploading screen_1.png…]()
-![screen_2](https://user-images.githubusercontent.com/77655925/140537815-fe7f32eb-e838-4d31-8f6c-65bd9e9d4bd4.png)
+![screen_1](https://user-images.githubusercontent.com/77655925/140538244-e2beb5c7-09bb-47b4-be4e-3535577f8725.png)
