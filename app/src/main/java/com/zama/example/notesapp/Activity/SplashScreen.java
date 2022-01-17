@@ -17,16 +17,17 @@ public class SplashScreen extends AppCompatActivity {
         Thread thread = new Thread() {
             public void run() {
                 try {
-                    sleep(3000);
+                    sleep(1000);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }finally {
-                   startActivity(new Intent(SplashScreen.this,MainActivity.class));
-                    finish();
+                    startActivity(new Intent(SplashScreen.this,MainActivity.class));
+                  finish();
                 }
             }
 
 
         };thread.start();
     }
+
 }

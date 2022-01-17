@@ -31,15 +31,16 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.notesViewHol
         allNotesitem = new ArrayList<>(notes);
     }
 
-    public void searchNotes(List<Notes> filterredNotes){
-        this.notes = filterredNotes;
+    public void searchNotes(List<Notes> filterredNames){
+        this.notes = filterredNames;
         notifyDataSetChanged();
     }
 
     @NonNull
     @Override
     public notesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new notesViewHolder(ActivityItemNotesBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
+        return new notesViewHolder(ActivityItemNotesBinding.inflate(LayoutInflater.from(parent.getContext()),
+                parent, false));
 
     }
 

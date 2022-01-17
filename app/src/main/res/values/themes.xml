@@ -12,6 +12,9 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+<!--        <item name="android:textColorPrimary">@color/black</item>-->
+        
+
     </style>
 
     <style name="Progressbar">
@@ -28,6 +31,10 @@
         <item name="background">@drawable/delete_sheet</item>
 
     </style>
+
+<!--    <style name="Circular">-->
+<!--        <item name="cornerSize">50%</item>-->
+<!--    </style>-->
 
 
 </resources>

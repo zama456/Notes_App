@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E8E8E8"
     android:id="@+id/Relativelayout"
+    android:background="@color/themeback"
     tools:context=".Activity.MainActivity">
 
     <LinearLayout
@@ -22,7 +22,8 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_margin="10dp"
-            android:background="@drawable/filter" />
+            android:src="@drawable/filter"
+            />
 
         <TextView
             android:id="@+id/NoFilter"
@@ -32,6 +33,7 @@
             android:layout_margin="5dp"
             android:background="@drawable/filter_un_shape"
             android:paddingStart="5dp"
+            android:textColor="@color/Nofilter"
             android:paddingTop="7dp"
             android:fontFamily="@font/product_sans_regular"
             android:paddingEnd="5dp"
@@ -45,6 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_margin="5dp"
+            android:textColor="@color/high"
             android:fontFamily="@font/product_sans_regular"
             android:background="@drawable/filter_un_shape"
             android:paddingStart="5dp"
@@ -60,8 +63,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_margin="5dp"
+            android:textColor="@color/low"
             android:background="@drawable/filter_un_shape"
             android:paddingStart="5dp"
+            android:fontFamily="@font/product_sans_regular"
             android:paddingTop="7dp"
             android:paddingEnd="5dp"
             android:paddingRight="5dp"
@@ -85,11 +90,13 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_margin="26dp"
         android:layout_marginStart="26dp"
         android:layout_marginTop="26dp"
+        android:textColor="@color/textcolor"
         android:layout_marginEnd="26dp"
         android:layout_marginBottom="26dp"
         android:backgroundTint="#FF5151"
-        android:src="@drawable/ic_baseline_add_24" />
+        android:src="@drawable/ic_baseline_add_24" >
+
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
 </RelativeLayout>

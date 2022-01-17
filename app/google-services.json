@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "657916488913",
+    "project_id": "notes-app-81fc4",
+    "storage_bucket": "notes-app-81fc4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:657916488913:android:4d7b6bc50600397974a9f0",
+        "android_client_info": {
+          "package_name": "com.zama.example.notesapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "657916488913-09h76i9552ouo5kuuu6er0vq8k803ts7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zama.example.notesapp",
+            "certificate_hash": "242f6b0a14509c7fce37b3d429428f4266d4a3b4"
+          }
+        },
+        {
+          "client_id": "657916488913-kdv937q8mb3aubrsm6fqkec3467rvhd4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLHKRym2ylXm5slT09mtPpqU821lEKtac"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "657916488913-kdv937q8mb3aubrsm6fqkec3467rvhd4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

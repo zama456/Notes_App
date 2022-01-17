@@ -84,6 +84,10 @@ public class UpdatesActivity extends AppCompatActivity {
             priority = "3";
         });
 
+
+
+
+
         binding.btnupdatefloating.setOnClickListener(view -> {
 
          String   title = binding.upTitle.getText().toString();
@@ -93,6 +97,8 @@ public class UpdatesActivity extends AppCompatActivity {
             UpateNotes(title, subtitle, notes);
 
         });
+
+
 
 
 
@@ -152,4 +158,5 @@ public class UpdatesActivity extends AppCompatActivity {
         }
         return true;
     }
+
 }

@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E8E8E8"
-    tools:context=".InsertNotesActivity">
+    android:background="@color/themeback"
+    tools:context=".Activity.InsertNotesActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,9 +20,13 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/text_back"
-            android:fontFamily="@font/product_sans_regular"
+            android:fontFamily="@font/nova_cut"
             android:hint="Title"
-            android:padding="15dp" />
+            android:maxLines="1"
+            android:padding="15dp"
+            android:textColor="@color/textcolor"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
 
         <EditText
@@ -33,9 +37,10 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/text_back"
-            android:fontFamily="@font/product_sans_regular"
+            android:fontFamily="@font/nova_cut"
             android:hint="Subtitle"
-            android:padding="15dp" />
+            android:padding="15dp"
+            android:textColor="@color/textcolor" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -57,7 +62,7 @@
                 android:fontFamily="@font/product_sans_regular"
                 android:padding="5dp"
                 android:text="priority"
-                android:textColor="@color/black"
+                android:textColor="@color/textcolor"
                 android:textSize="15dp" />
 
 
@@ -65,10 +70,9 @@
                 android:id="@+id/greenpty"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:src="@drawable/ic_baseline_done_24"
                 android:layout_margin="5dp"
                 android:background="@drawable/green_shape"
-                 />
+                android:src="@drawable/ic_baseline_done_24" />
 
             <ImageView
                 android:id="@+id/Yellowpty"
@@ -87,6 +91,30 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/llAddImg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/addImgIV"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="30dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_image"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/AddIV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/product_sans_bold"
+                android:text="Add Image" />
+        </LinearLayout>
 
         <EditText
             android:id="@+id/notesData"
@@ -97,10 +125,11 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/text_back"
-            android:fontFamily="@font/product_sans_regular"
+            android:fontFamily=""
             android:gravity="start"
-            android:hint="Notes..."
-            android:padding="15dp" />
+            android:hint="@string/type_your_notes_here"
+            android:padding="15dp"
+            android:textColor="@color/textcolor" />
 
     </LinearLayout>
 
@@ -116,5 +145,7 @@
         android:layout_marginEnd="26dp"
         android:layout_marginBottom="26dp"
         android:backgroundTint="#FF5151"
-        android:src="@drawable/ic_baseline_done_24" />
+        android:src="@drawable/ic_baseline_done_24">
+
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
 </RelativeLayout>
