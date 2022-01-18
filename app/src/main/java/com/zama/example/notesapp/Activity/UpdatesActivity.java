@@ -1,9 +1,12 @@
 package com.zama.example.notesapp.Activity;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.util.Log;
@@ -88,19 +91,38 @@ public class UpdatesActivity extends AppCompatActivity {
 
 
 
-        binding.btnupdatefloating.setOnClickListener(view -> {
-
-         String   title = binding.upTitle.getText().toString();
-         String   subtitle = binding.upSubtitle.getText().toString();
-         String   notes = binding.upnotes.getText().toString();
-
-            UpateNotes(title, subtitle, notes);
+        binding.llAddmg1.setOnClickListener(view -> {
+            Toast.makeText(this, "add Image", Toast.LENGTH_SHORT).show();
+            Intent addImg = new Intent(Intent.ACTION_PICK);
+            addImg.setType("image/*");
+            startActivityForResult(addImg, 101);
 
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 101) {
+            if (data != null) {
+                Uri imgUri = data.getData();
+                binding.addImgIV.setImageURI(imgUri);
+            }
+
+            binding.btnupdatefloating.setOnClickListener(view -> {
+
+                String title = binding.upTitle.getText().toString();
+                String subtitle = binding.upSubtitle.getText().toString();
+                String notes = binding.upnotes.getText().toString();
 
 
+                UpateNotes(title, subtitle, notes);
+
+            });
 
 
+        }
 
     }
 

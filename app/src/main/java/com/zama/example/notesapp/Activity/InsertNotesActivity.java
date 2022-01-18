@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.format.DateFormat;
@@ -17,6 +19,7 @@ import com.zama.example.notesapp.NotesViewModel;
 import com.zama.example.notesapp.R;
 import com.zama.example.notesapp.databinding.ActivityInsertNotesBinding;
 
+import java.io.InputStream;
 import java.util.Date;
 
 public class InsertNotesActivity extends AppCompatActivity {
@@ -71,7 +74,7 @@ public class InsertNotesActivity extends AppCompatActivity {
 
         binding.llAddImg.setOnClickListener(view -> {
             Toast.makeText(this, "add Image", Toast.LENGTH_SHORT).show();
-            Intent addImg = new Intent(Intent.ACTION_GET_CONTENT);
+            Intent addImg = new Intent(Intent.ACTION_PICK);
             addImg.setType("image/*");
             startActivityForResult(addImg, 101);
 
@@ -86,6 +89,7 @@ public class InsertNotesActivity extends AppCompatActivity {
             if (data != null) {
                 Uri imgUri = data.getData();
                 binding.addImgIV.setImageURI(imgUri);
+
             }
         }
     }
